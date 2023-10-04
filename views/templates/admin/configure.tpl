@@ -19,11 +19,11 @@
 
 <div class="alert alert-info" style="overflow: hidden;">
     <div style="float: left; margin-right: 15px;">
-        <img src="{$modulePath}logo.png" style="width: 40px; height: auto;">
+        <img src="{$modulePath nofilter}logo.png" style="width: 40px; height: auto;">
     </div>
     <div>
-        <b>{l s="Accept Cryptocurrency Payments with Sheepy - The Leading Payment Gateway" }</b><br>
-        {l s="We offer reliable payment gateway to start accepting BTC, LTC, BCH, ETH, USDT, TRX and other digital assets right away."}
+        <b>{l s="Accept Cryptocurrency Payments with Sheepy - The Leading Payment Gateway" d="Modules.Sheepy.Admin"}</b><br>
+        {l s="We offer reliable payment gateway to start accepting BTC, LTC, BCH, ETH, USDT, TRX and other digital assets right away." d="Modules.Sheepy.Admin"}
     </div>
 </div>
 
