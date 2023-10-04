@@ -113,7 +113,7 @@ class Sheepy extends PaymentModule
     {
         $output = '';
 
-        if ((Tools::isSubmit('submit' . $this->name))) {
+        if (Tools::isSubmit('submit' . $this->name)) {
             $this->postValidate();
 
             if (empty($this->context->controller->errors)) {

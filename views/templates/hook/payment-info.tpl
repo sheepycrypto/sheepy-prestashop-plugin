@@ -18,7 +18,7 @@
 
 <section>
     <p>
-        {l s="Cryptocurrency payments are processed by" d="Modules.Sheepy.Hook"}
+        {l s="Cryptocurrency payments are processed by" d="Modules.Sheepy.Payment}"}
         <a href="https://www.sheepy.com" target="_blank">Sheepy.com</a>
     </p>
 </section>

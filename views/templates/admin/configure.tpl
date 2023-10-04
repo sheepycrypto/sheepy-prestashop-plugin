@@ -19,7 +19,7 @@
 
 <div class="alert alert-info" style="overflow: hidden;">
     <div style="float: left; margin-right: 15px;">
-        <img src="{$modulePath nofilter}logo.png" style="width: 40px; height: auto;">
+        <img src="{$modulePath|escape:'html':'UTF-8'}logo.png" style="width: 40px; height: auto;">
     </div>
     <div>
         <b>{l s="Accept Cryptocurrency Payments with Sheepy - The Leading Payment Gateway" d="Modules.Sheepy.Admin"}</b><br>

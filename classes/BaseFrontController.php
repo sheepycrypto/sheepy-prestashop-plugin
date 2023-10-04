@@ -20,9 +20,7 @@
 
 namespace PrestaShop\Module\Sheepy;
 
-use ModuleFrontController;
-
-class BaseFrontController extends ModuleFrontController
+class BaseFrontController extends \ModuleFrontController
 {
     /**
      * Response.

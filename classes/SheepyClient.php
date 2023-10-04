@@ -20,8 +20,6 @@
 
 namespace PrestaShop\Module\Sheepy;
 
-use Exception;
-
 class SheepyClient
 {
     /* @todo Replace API URL */
@@ -54,7 +52,7 @@ class SheepyClient
      *
      * @return array
      *
-     * @throws Exception
+     * @throws \Exception
      */
     public function createInvoice(array $bodyParams): array
     {
@@ -71,7 +69,7 @@ class SheepyClient
      *
      * @return array
      *
-     * @throws Exception
+     * @throws \Exception
      */
     private function request(string $method, string $path, array $bodyParams = [], array $urlParams = []): array
     {
@@ -97,11 +95,11 @@ class SheepyClient
         $responseCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
         if ($responseBody === false) {
-            throw new Exception('Request error: ' . curl_error($curl));
+            throw new \Exception('Request error: ' . curl_error($curl));
         }
 
         if ($responseCode !== 200) {
-            throw new Exception('Request error: ' . $responseBody['message']);
+            throw new \Exception('Request error: ' . $responseBody['message']);
         }
 
         curl_close($curl);
