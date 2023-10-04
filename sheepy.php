@@ -45,6 +45,7 @@ class Sheepy extends PaymentModule
         $this->tab = 'payments_gateways';
         $this->version = '1.0.0';
         $this->author = 'Sheepy.com';
+        $this->module_key = '725815802df89ed906fda462f3e114b7';
         $this->ps_versions_compliancy = ['min' => '1.7', 'max' => _PS_VERSION_];
         $this->bootstrap = true;
 
