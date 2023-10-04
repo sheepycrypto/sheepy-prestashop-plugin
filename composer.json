@@ -1,0 +1,36 @@
+{
+    "name": "sheepy/prestashop-module",
+    "description": "PrestaShop Payment Module",
+    "authors": [
+        {
+            "name": "Sheepy",
+            "email": "call@sheepy.com"
+        }
+    ],
+    "require-dev": {
+        "prestashop/php-dev-tools": "^4.2.1"
+    },
+    "require": {
+        "php": ">=7.2.3",
+        "prestashop/prestashop-accounts-installer": "^1.0",
+        "prestashop/module-lib-service-container": "^1.4",
+        "prestashop/module-lib-mbo-installer": "^0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "PrestaShop\\Module\\Sheepy\\": "classes/"
+        },
+        "classmap": [
+            "sheepy.php"
+        ],
+        "exclude-from-classmap": []
+    },
+    "config": {
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "prepend-autoloader": false
+    },
+    "type": "prestashop-module",
+    "author": "PrestaShop",
+    "license": "AFL-3.0"
+}
