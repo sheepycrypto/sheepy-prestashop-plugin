@@ -23,7 +23,7 @@ namespace PrestaShop\Module\Sheepy;
 class SheepyClient
 {
     /* @todo Replace API URL */
-    private $apiUrl = 'https://sheepy-api-release.cpay.io';
+    private $apiUrl = 'https://api.sheepy.com';
     private $apiKey;
     private $secretKey;
     private $userAgent;
