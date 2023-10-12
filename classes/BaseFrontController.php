@@ -20,6 +20,10 @@
 
 namespace PrestaShop\Module\Sheepy;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class BaseFrontController extends \ModuleFrontController
 {
     /**

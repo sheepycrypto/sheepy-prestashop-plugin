@@ -20,6 +20,10 @@
 
 use PrestaShop\Module\Sheepy\BaseFrontController;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class SheepyCancelModuleFrontController extends BaseFrontController
 {
     public function postProcess()

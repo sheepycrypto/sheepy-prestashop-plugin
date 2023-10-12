@@ -21,6 +21,10 @@
 use PrestaShop\Module\Sheepy\Constants;
 use PrestaShop\Module\Sheepy\SheepyClient;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class SheepyRedirectModuleFrontController extends ModuleFrontController
 {
     public $ssl = true;

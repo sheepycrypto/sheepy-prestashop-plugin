@@ -22,6 +22,10 @@ use PrestaShop\Module\Sheepy\BaseFrontController;
 use PrestaShop\Module\Sheepy\Constants;
 use PrestaShop\Module\Sheepy\SheepyClient;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class SheepyCallbackModuleFrontController extends BaseFrontController
 {
     public $ssl = true;
