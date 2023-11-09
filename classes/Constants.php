@@ -86,12 +86,8 @@ class Constants
 
     /* Countries not supported by Sheepy */
     public const PROHIBITED_COUNTRIES = [
-        'AF', 'AL', 'DZ', 'AS', 'AI', 'AG', 'AW', 'BS', 'BH', 'BD', 'BB', 'BY', 'BM', 'BO',
-        'VG', 'BF', 'BI', 'KH', 'KY', 'CF', 'CD', 'CK', 'CU', 'DM', 'EG', 'ER', 'ET', 'FJ',
-        'GU', 'GN', 'GW', 'HT', 'ID', 'IR', 'IQ', 'JM', 'JO', 'KW', 'LB', 'LY', 'MG', 'MY',
-        'ML', 'MH', 'MR', 'MN', 'MA', 'MZ', 'MM', 'NP', 'NI', 'NE', 'NG', 'KP', 'OM', 'PK',
-        'PS', 'PA', 'PH', 'QA', 'RU', 'KN', 'LC', 'VC', 'WS', 'SA', 'SN', 'SL', 'SO', 'SS',
-        'LK', 'SY', 'TZ', 'TT', 'TN', 'TC', 'VI', 'UG', 'UA', 'VU', 'VE', 'YE', 'ZW',
+        'AF', 'AL', 'BY', 'BF', 'CF', 'CN', 'CD', 'ER', 'GU', 'GW', 'HT', 'IR', 'IQ', 'JM', 'LB', 'LY', 'ML', 'MM',
+        'KP', 'PA', 'RU', 'SN', 'SO', 'SS', 'SD', 'SY', 'VI', 'UG', 'UM', 'YE',
     ];
 
     /* Required consents for CloudSync */

@@ -2,7 +2,7 @@
 <module>
     <name>sheepy</name>
     <displayName><![CDATA[Sheepy module]]></displayName>
-    <version><![CDATA[1.0.0]]></version>
+    <version><![CDATA[1.0.1]]></version>
     <description><![CDATA[Accept Bitcoin and other cryptocurrencies from anywhere in the world, and attract new customers who prefer crypto payments with Sheepy plugin.]]></description>
     <author><![CDATA[Sheepy.com]]></author>
     <tab><![CDATA[payments_gateways]]></tab>
