@@ -1,0 +1,28 @@
+services:
+
+  # Sheepy Module
+
+  sheepy.module:
+    class: Sheepy
+    factory: [ 'Module', 'getInstanceByName' ]
+    arguments:
+      - 'sheepy'
+
+  sheepy.context:
+    class: Context
+    public: true
+    factory: [ 'Context', 'getContext' ]
+
+  # PS Account
+
+  sheepy.ps_accounts_installer:
+    class: 'PrestaShop\PsAccountsInstaller\Installer\Installer'
+    public: true
+    arguments:
+      - "5.0"
+
+  sheepy.ps_accounts_facade:
+    class: 'PrestaShop\PsAccountsInstaller\Installer\Facade\PsAccounts'
+    public: true
+    arguments:
+      - "@sheepy.ps_accounts_installer"
