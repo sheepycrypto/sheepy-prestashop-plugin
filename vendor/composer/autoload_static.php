@@ -9,12 +9,12 @@ class ComposerStaticInite024ec31aaacfebda6585fba393c01b9
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '9c67151ae59aff4788964ce8eb2a0f43' => __DIR__ . '/..' . '/clue/stream-filter/src/functions_include.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
+        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -45,6 +45,7 @@ class ComposerStaticInite024ec31aaacfebda6585fba393c01b9
             'PrestaShop\\Module\\Sheepy\\' => 25,
             'PrestaShop\\ModuleLibServiceContainer\\' => 37,
             'PrestaShop\\ModuleLibCacheDirectoryProvider\\' => 43,
+            'PrestaShopCorp\\Billing\\' => 23,
         ),
         'H' => 
         array (
@@ -150,6 +151,10 @@ class ComposerStaticInite024ec31aaacfebda6585fba393c01b9
         'PrestaShop\\ModuleLibCacheDirectoryProvider\\' => 
         array (
             0 => __DIR__ . '/..' . '/prestashop/module-lib-cache-directory-provider/src',
+        ),
+        'PrestaShopCorp\\Billing\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src',
         ),
         'Http\\Promise\\' => 
         array (
@@ -268,6 +273,19 @@ class ComposerStaticInite024ec31aaacfebda6585fba393c01b9
         'Http\\Promise\\RejectedPromise' => __DIR__ . '/..' . '/php-http/promise/src/RejectedPromise.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+        'PrestaShopCorp\\Billing\\Builder\\EnvBuilder' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Builder/EnvBuilder.php',
+        'PrestaShopCorp\\Billing\\Builder\\UrlBuilder' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Builder/UrlBuilder.php',
+        'PrestaShopCorp\\Billing\\Clients\\BillingApiGatewayClient' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Clients/BillingAPIGatewayClient.php',
+        'PrestaShopCorp\\Billing\\Clients\\BillingServiceSubscriptionClient' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Clients/BillingServiceSubscriptionClient.php',
+        'PrestaShopCorp\\Billing\\Clients\\GenericClient' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Clients/GenericClient.php',
+        'PrestaShopCorp\\Billing\\Clients\\Handler\\HttpResponseHandler' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Clients/Handler/HttpResponseHandler.php',
+        'PrestaShopCorp\\Billing\\Config\\Config' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Config/Config.php',
+        'PrestaShopCorp\\Billing\\Exception\\BillingContextException' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Exception/BillingContextException.php',
+        'PrestaShopCorp\\Billing\\Exception\\MissingMandatoryParametersException' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Exception/MissingMandatoryParametersException.php',
+        'PrestaShopCorp\\Billing\\Exception\\QueryParamsException' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Exception/QueryParamsException.php',
+        'PrestaShopCorp\\Billing\\Presenter\\BillingPresenter' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Presenter/BillingPresenter.php',
+        'PrestaShopCorp\\Billing\\Services\\BillingService' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Services/BillingService.php',
+        'PrestaShopCorp\\Billing\\Wrappers\\BillingContextWrapper' => __DIR__ . '/..' . '/prestashopcorp/module-lib-billing/src/Wrappers/BillingContextWrapper.php',
         'PrestaShop\\ModuleLibCacheDirectoryProvider\\Cache\\CacheDirectoryProvider' => __DIR__ . '/..' . '/prestashop/module-lib-cache-directory-provider/src/Cache/CacheDirectoryProvider.php',
         'PrestaShop\\ModuleLibServiceContainer\\DependencyInjection\\ContainerProvider' => __DIR__ . '/..' . '/prestashop/module-lib-service-container/src/DependencyInjection/ContainerProvider.php',
         'PrestaShop\\ModuleLibServiceContainer\\DependencyInjection\\ServiceContainer' => __DIR__ . '/..' . '/prestashop/module-lib-service-container/src/DependencyInjection/ServiceContainer.php',
@@ -291,6 +309,7 @@ class ComposerStaticInite024ec31aaacfebda6585fba393c01b9
         'Prestashop\\ModuleLibGuzzleAdapter\\Interfaces\\ConfigInterface' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/Interfaces/ConfigInterface.php',
         'Prestashop\\ModuleLibGuzzleAdapter\\Interfaces\\HttpClientInterface' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/Interfaces/HttpClientInterface.php',
         'Prestashop\\ModuleLibGuzzleAdapter\\VersionDetection' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/VersionDetection.php',
+        'Prestashop\\ModuleLibMboInstaller\\DependencyBuilder' => __DIR__ . '/..' . '/prestashop/module-lib-mbo-installer/src/DependencyBuilder.php',
         'Prestashop\\ModuleLibMboInstaller\\Installer' => __DIR__ . '/..' . '/prestashop/module-lib-mbo-installer/src/Installer.php',
         'Prestashop\\ModuleLibMboInstaller\\Presenter' => __DIR__ . '/..' . '/prestashop/module-lib-mbo-installer/src/Presenter.php',
         'Psr\\Cache\\CacheException' => __DIR__ . '/..' . '/psr/cache/src/CacheException.php',
@@ -681,6 +700,7 @@ class ComposerStaticInite024ec31aaacfebda6585fba393c01b9
         'Symfony\\Contracts\\Service\\ServiceSubscriberInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceSubscriberInterface.php',
         'Symfony\\Contracts\\Service\\ServiceSubscriberTrait' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceSubscriberTrait.php',
         'Symfony\\Contracts\\Service\\Test\\ServiceLocatorTest' => __DIR__ . '/..' . '/symfony/service-contracts/Test/ServiceLocatorTest.php',
+        'Symfony\\Contracts\\Service\\Test\\ServiceLocatorTestCase' => __DIR__ . '/..' . '/symfony/service-contracts/Test/ServiceLocatorTestCase.php',
         'Symfony\\Polyfill\\Ctype\\Ctype' => __DIR__ . '/..' . '/symfony/polyfill-ctype/Ctype.php',
         'Symfony\\Polyfill\\Php73\\Php73' => __DIR__ . '/..' . '/symfony/polyfill-php73/Php73.php',
         'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',

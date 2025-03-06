@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ad2ae713e57be279b5f0ca6be8e8c5c",
+    "content-hash": "07742adefa49536da885e90e70998939",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -467,19 +467,20 @@
         },
         {
             "name": "prestashop/module-lib-mbo-installer",
-            "version": "v0.1",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PrestaShopCorp/module-lib-mbo-installer.git",
-                "reference": "c9e598307ef17975e10c98c98538c2d3512b962b"
+                "reference": "0336c8ca3a14a4a85bbe50663e6154bce4a9631f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PrestaShopCorp/module-lib-mbo-installer/zipball/c9e598307ef17975e10c98c98538c2d3512b962b",
-                "reference": "c9e598307ef17975e10c98c98538c2d3512b962b",
+                "url": "https://api.github.com/repos/PrestaShopCorp/module-lib-mbo-installer/zipball/0336c8ca3a14a4a85bbe50663e6154bce4a9631f",
+                "reference": "0336c8ca3a14a4a85bbe50663e6154bce4a9631f",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "php": ">=5.6",
                 "prestashop/module-lib-guzzle-adapter": "^0.6"
             },
@@ -511,9 +512,9 @@
             "description": "A helper to ease the download PS MBO from the Addons Marketplace",
             "support": {
                 "issues": "https://github.com/PrestaShopCorp/module-lib-mbo-installer/issues",
-                "source": "https://github.com/PrestaShopCorp/module-lib-mbo-installer/tree/v0.1"
+                "source": "https://github.com/PrestaShopCorp/module-lib-mbo-installer/tree/v1.0.0"
             },
-            "time": "2023-02-06T10:42:50+00:00"
+            "time": "2023-12-05T13:39:18+00:00"
         },
         {
             "name": "prestashop/module-lib-service-container",
@@ -608,6 +609,48 @@
                 "source": "https://github.com/PrestaShopCorp/prestashop-accounts-installer/tree/v1.0.4"
             },
             "time": "2023-05-04T07:24:48+00:00"
+        },
+        {
+            "name": "prestashopcorp/module-lib-billing",
+            "version": "3.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PrestaShopCorp/module-lib-billing.git",
+                "reference": "afc83c3cfaaa5f54c14ad35fb793a3caa332ffdb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PrestaShopCorp/module-lib-billing/zipball/afc83c3cfaaa5f54c14ad35fb793a3caa332ffdb",
+                "reference": "afc83c3cfaaa5f54c14ad35fb793a3caa332ffdb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "prestashop/module-lib-guzzle-adapter": "0.6"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^5.3",
+                "prestashop/php-dev-tools": "^3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PrestaShopCorp\\Billing\\": "src/"
+                },
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Utility package to retrieve Built for PS context and more",
+            "support": {
+                "issues": "https://github.com/PrestaShopCorp/module-lib-billing/issues",
+                "source": "https://github.com/PrestaShopCorp/module-lib-billing/tree/3.3.1"
+            },
+            "time": "2024-07-26T06:02:36+00:00"
         },
         {
             "name": "psr/cache",
@@ -3419,5 +3462,5 @@
         "php": ">=7.2.3"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.2.0"
 }

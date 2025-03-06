@@ -28,6 +28,7 @@ return array(
     'PrestaShop\\Module\\Sheepy\\' => array($baseDir . '/classes'),
     'PrestaShop\\ModuleLibServiceContainer\\' => array($vendorDir . '/prestashop/module-lib-service-container/src'),
     'PrestaShop\\ModuleLibCacheDirectoryProvider\\' => array($vendorDir . '/prestashop/module-lib-cache-directory-provider/src'),
+    'PrestaShopCorp\\Billing\\' => array($vendorDir . '/prestashopcorp/module-lib-billing/src'),
     'Http\\Promise\\' => array($vendorDir . '/php-http/promise/src'),
     'Http\\Message\\' => array($vendorDir . '/php-http/message/src'),
     'Http\\Client\\' => array($vendorDir . '/php-http/httplug/src'),

@@ -69,7 +69,8 @@ class SheepyRedirectModuleFrontController extends ModuleFrontController
         $sheepyService = new SheepyClient(
             Configuration::get(Constants::SHEEPY_API_KEY),
             Configuration::get(Constants::SHEEPY_API_SECRET_KEY),
-            "PrestaShop Sheepy module v{$this->module->version}"
+            "PrestaShop Sheepy module v{$this->module->version}",
+            Configuration::get(Constants::SHEEPY_PRESTASHOP_SHOP_ID)
         );
 
         try {
