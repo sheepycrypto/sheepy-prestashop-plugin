@@ -20,6 +20,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use PrestaShop\Module\Sheepy\Constants;
+use Prestashop\ModuleLibMboInstaller\DependencyBuilder;
 use Prestashop\ModuleLibMboInstaller\Installer;
 use Prestashop\ModuleLibMboInstaller\Presenter;
 use PrestaShop\ModuleLibServiceContainer\DependencyInjection\ServiceContainer;
@@ -125,6 +126,17 @@ class Sheepy extends PaymentModule
                 $this->postProcess();
                 $output = $this->displayConfirmation($this->l('Settings updated'));
             }
+        }
+
+        # Load dependencies manager
+        $mboInstaller = new DependencyBuilder($this);
+
+        if (!$mboInstaller->areDependenciesMet()) {
+            $dependencies = $mboInstaller->handleDependencies();
+
+            $this->smarty->assign('dependencies', $dependencies);
+
+            return $this->display(__FILE__, 'views/templates/admin/dependency_builder.tpl');
         }
 
         $this->context->smarty->assign('modulePath', $this->_path);
