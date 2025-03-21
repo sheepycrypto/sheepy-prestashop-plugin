@@ -51,7 +51,7 @@ class Sheepy extends PaymentModule
         $this->version = '1.0.3';
         $this->author = 'Sheepy.com';
         $this->module_key = '725815802df89ed906fda462f3e114b7';
-        $this->ps_versions_compliancy = ['min' => '1.7', 'max' => _PS_VERSION_];
+        $this->ps_versions_compliancy = ['min' => '1.7.5', 'max' => _PS_VERSION_];
         $this->bootstrap = true;
 
         parent::__construct();
@@ -128,7 +128,6 @@ class Sheepy extends PaymentModule
             }
         }
 
-        # Load dependencies manager
         $mboInstaller = new DependencyBuilder($this);
 
         if (!$mboInstaller->areDependenciesMet()) {

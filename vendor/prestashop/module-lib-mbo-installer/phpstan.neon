@@ -7,6 +7,7 @@ parameters:
 	bootstrapFiles:
 		- vendor/autoload.php
 	reportUnmatchedIgnoredErrors: false
+	treatPhpDocTypesAsCertain: false
 	ignoreErrors:
 		- '#Method PrestaShop\\PrestaShop\\Core\\Addon\\Module\\ModuleManager::install\(\) invoked with 2 parameters, 1 required.#'
 		- '#Call to function is_null\(\) with PrestaShop\\PrestaShop\\Core\\Addon\\Module\\ModuleManager will always evaluate to false.#'
@@ -17,5 +18,6 @@ parameters:
 		- '#Call to method install\(\) on an unknown class PrestaShop\\PrestaShop\\Core\\Module\\ModuleManager.#'
 		- '#Call to method enable\(\) on an unknown class PrestaShop\\PrestaShop\\Core\\Addon\\Module\\ModuleManager.#'
 		- '#Call to method enable\(\) on an unknown class PrestaShop\\PrestaShop\\Core\\Module\\ModuleManager.#'
-
+		- '#Property Prestashop\\ModuleLibMboInstaller\\HttpClient::\$curl has no type specified.#'
+		
 	level: max
