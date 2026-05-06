@@ -1,0 +1,20 @@
+# macOS / Windows artifacts
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+nbproject/
+*.swp
+*.swo
+
+# PHP tooling cache
+.php-cs-fixer.cache
+.phpunit.result.cache
+
+# Logs
+*.log
+
+# Composer (vendor/ stays in git — module ships with vendored deps)
+composer.phar
