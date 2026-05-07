@@ -29,7 +29,7 @@ The full list of supported currencies and trading pairs is available via the She
 - PrestaShop **1.7** or higher
 - PHP **7.2.3** or higher
 - PHP extensions: `curl`, `json`, `mbstring`
-- An active Sheepy merchant account with API credentials
+- An active Sheepy merchant account with API credentials — [apply for an account](https://my.sheepy.com/auth/sign-up) or [contact us](https://www.sheepy.com/contact-us)
 - HTTPS-enabled storefront (required for webhook delivery)
 
 ## Installation
@@ -89,7 +89,7 @@ On a successful payment, the order moves to PrestaShop's standard **Payment acce
 
 For issues with the module, please open a ticket on the [GitHub Issues](https://github.com/sheepycrypto/sheepy-prestashop-plugin/issues) page.
 
-For general Sheepy questions and merchant onboarding, visit [www.sheepy.com](https://www.sheepy.com).
+For general Sheepy questions and merchant onboarding, visit [www.sheepy.com](https://www.sheepy.com) or [contact us](https://www.sheepy.com/contact-us). The Sheepy API reference is available at [www.sheepy.com/api](https://www.sheepy.com/api).
 
 ## License
 
