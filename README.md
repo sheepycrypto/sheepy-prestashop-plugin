@@ -22,7 +22,7 @@ Merchants can keep funds in cryptocurrency or set up automatic conversion to fia
 - [Bitcoin Cash (BCH)](https://www.sheepy.com/supported-cryptocurrencies/bitcoin-cash-bch)
 - [Dogecoin (DOGE)](https://www.sheepy.com/supported-cryptocurrencies/dogecoin-doge)
 
-The full list of supported currencies and trading pairs is available via the Sheepy API. See [Supported cryptocurrencies](https://www.sheepy.com/supported-cryptocurrencies) for the up-to-date list.
+See [www.sheepy.com/supported-cryptocurrencies](https://www.sheepy.com/supported-cryptocurrencies) for the up-to-date list and supported trading pairs, or query them via the Sheepy API.
 
 ## Requirements
 
@@ -42,8 +42,6 @@ The full list of supported currencies and trading pairs is available via the She
 > The module folder must be named `sheepy` for the plugin to work properly.
 
 ## Configuration
-
-The module assumes you already have a Sheepy merchant account (registration is not self-service).
 
 1. Log in to the Sheepy dashboard at [my.sheepy.com](https://my.sheepy.com).
 2. Go to **Integration → API Integration** and copy your **API Key** and **API Secret Key**.
