@@ -4,9 +4,23 @@
 ![PHP Version](https://img.shields.io/badge/PHP-7.2.3%2B-blue)
 ![License](https://img.shields.io/badge/license-AFL--3.0-green)
 
-Accept Bitcoin and other cryptocurrencies from anywhere in the world, and attract new customers who prefer crypto payments with the [Sheepy](https://www.sheepy.com) plugin.
+This module integrates the [Sheepy](https://www.sheepy.com) cryptocurrency payment gateway into PrestaShop. Customers are redirected to a hosted Sheepy checkout to complete payment in the cryptocurrency of their choice, and the order status is updated automatically as the on-chain payment progresses.
 
-This module integrates the Sheepy payment gateway into PrestaShop. Customers are redirected to a hosted Sheepy checkout to complete payment in the cryptocurrency of their choice, and the order status is updated automatically as the on-chain payment progresses.
+## Supported cryptocurrencies
+
+- [Bitcoin (BTC)](https://www.sheepy.com/supported-cryptocurrencies/bitcoin-btc)
+- [Ethereum (ETH)](https://www.sheepy.com/supported-cryptocurrencies/ethereum-eth)
+- Tether (USDT) on [TRC-20](https://www.sheepy.com/supported-cryptocurrencies/tether-trc-20), [ERC-20](https://www.sheepy.com/supported-cryptocurrencies/tether-erc-20-usdt), [BEP-20](https://www.sheepy.com/supported-cryptocurrencies/tether-bep-20-usdt)
+- [USD Coin (USDC)](https://www.sheepy.com/supported-cryptocurrencies/usd-coin-erc-20) on ERC-20
+- [TRON (TRX)](https://www.sheepy.com/supported-cryptocurrencies/tron-trx)
+- [BNB](https://www.sheepy.com/supported-cryptocurrencies/binance-smart-chain-bnb) on Binance Smart Chain
+- [Solana (SOL)](https://www.sheepy.com/supported-cryptocurrencies/solana-sol)
+- [Litecoin (LTC)](https://www.sheepy.com/supported-cryptocurrencies/litecoin-ltc)
+- [XRP](https://www.sheepy.com/supported-cryptocurrencies/xrp)
+- [Bitcoin Cash (BCH)](https://www.sheepy.com/supported-cryptocurrencies/bitcoin-cash-bch)
+- [Dogecoin (DOGE)](https://www.sheepy.com/supported-cryptocurrencies/dogecoin-doge)
+
+The full list of supported currencies and trading pairs is available via the Sheepy API. See [Supported cryptocurrencies](https://www.sheepy.com/supported-cryptocurrencies) for the up-to-date list.
 
 ## Requirements
 
