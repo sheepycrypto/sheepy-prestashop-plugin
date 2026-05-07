@@ -48,8 +48,8 @@ The module assumes you already have a Sheepy merchant account (registration is n
 1. Log in to the Sheepy dashboard at [my.sheepy.com](https://my.sheepy.com).
 2. Go to **Integration → API Integration** and copy your **API Key** and **API Secret Key**.
 3. Go to **Integration → Integration settings → Webhooks**:
-   - Set the webhook URL to the callback endpoint shown on the module configuration page in PrestaShop.
-   - Copy the generated **Notification Secret Key**.
+   - Click **Generate secret key** and copy the resulting **Notification Secret Key**. It is shown only once.
+   - The webhook URL field can be left empty — the module sends its callback URL with every invoice automatically.
 4. In the PrestaShop back office, open **Modules → Module Manager → Sheepy → Configure**.
 5. Paste the **API Key**, **API Secret Key**, and **Notification Secret Key**, then save.
 
