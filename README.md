@@ -6,6 +6,8 @@
 
 This module integrates the [Sheepy](https://www.sheepy.com) cryptocurrency payment gateway into PrestaShop. Customers are redirected to a hosted Sheepy checkout to complete payment in the cryptocurrency of their choice, and the order status is updated automatically as the on-chain payment progresses.
 
+Merchants can keep funds in cryptocurrency or set up automatic conversion to fiat or stablecoins to avoid FX risks.
+
 ## Supported cryptocurrencies
 
 - [Bitcoin (BTC)](https://www.sheepy.com/supported-cryptocurrencies/bitcoin-btc)
