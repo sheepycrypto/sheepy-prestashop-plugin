@@ -26,11 +26,11 @@ if (!defined('_PS_VERSION_')) {
 
 class SheepyClient
 {
-    /* @todo Replace API URL */
     private $apiUrl = 'https://api.sheepy.com';
     private $apiKey;
     private $secretKey;
     private $userAgent;
+    private $shopId;
 
     public const TIMESTAMP_HEADER = 'HTTP_X_TIMESTAMP';
     public const SIGNATURE_HEADER = 'HTTP_X_SIGNATURE';
@@ -41,12 +41,14 @@ class SheepyClient
      * @param string $apiKey
      * @param string $secretKey
      * @param string $userAgent
+     * @param string $shopId
      */
-    public function __construct(string $apiKey, string $secretKey, string $userAgent)
+    public function __construct(string $apiKey, string $secretKey, string $userAgent, string $shopId)
     {
         $this->apiKey = $apiKey;
         $this->secretKey = $secretKey;
         $this->userAgent = $userAgent;
+        $this->shopId = $shopId;
     }
 
     /**
@@ -88,6 +90,7 @@ class SheepyClient
             "X-Token: $this->apiKey",
             "X-Signature: $signature",
             "X-Timestamp: $time",
+            "X-Prestashop-id: $this->shopId",
         ];
 
         $curl = curl_init();

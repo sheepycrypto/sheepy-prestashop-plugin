@@ -20,6 +20,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use PrestaShop\Module\Sheepy\Constants;
+use Prestashop\ModuleLibMboInstaller\DependencyBuilder;
 use Prestashop\ModuleLibMboInstaller\Installer;
 use Prestashop\ModuleLibMboInstaller\Presenter;
 use PrestaShop\ModuleLibServiceContainer\DependencyInjection\ServiceContainer;
@@ -36,6 +37,10 @@ class Sheepy extends PaymentModule
     /** @var ServiceContainer */
     private $container;
 
+    private $accountsService;
+
+    private $accountsFacade;
+
     /**
      * Sheepy module constructor.
      */
@@ -43,10 +48,10 @@ class Sheepy extends PaymentModule
     {
         $this->name = 'sheepy';
         $this->tab = 'payments_gateways';
-        $this->version = '1.0.2';
+        $this->version = '1.0.3';
         $this->author = 'Sheepy.com';
         $this->module_key = '725815802df89ed906fda462f3e114b7';
-        $this->ps_versions_compliancy = ['min' => '1.7', 'max' => _PS_VERSION_];
+        $this->ps_versions_compliancy = ['min' => '1.7.5', 'max' => _PS_VERSION_];
         $this->bootstrap = true;
 
         parent::__construct();
@@ -65,6 +70,7 @@ class Sheepy extends PaymentModule
      * Install module.
      *
      * @return bool
+     * @throws Exception
      */
     public function install(): bool
     {
@@ -109,11 +115,10 @@ class Sheepy extends PaymentModule
      * Handle the module configuration page.
      *
      * @return string
+     * @throws SmartyException
      */
     public function getContent(): string
     {
-        $output = '';
-
         if (Tools::isSubmit('submit' . $this->name)) {
             $this->postValidate();
 
@@ -123,19 +128,22 @@ class Sheepy extends PaymentModule
             }
         }
 
+        $mboInstaller = new DependencyBuilder($this);
+
+        if (!$mboInstaller->areDependenciesMet()) {
+            $dependencies = $mboInstaller->handleDependencies();
+
+            $this->smarty->assign('dependencies', $dependencies);
+
+            return $this->display(__FILE__, 'views/templates/admin/dependency_builder.tpl');
+        }
+
         $this->context->smarty->assign('modulePath', $this->_path);
 
         $moduleManager = ModuleManagerBuilder::getInstance()->build();
 
-        try {
-            $accountsFacade = $this->getService("$this->name.ps_accounts_facade");
-            $accountsService = $accountsFacade->getPsAccountsService();
-        } catch (InstallerException $e) {
-            $accountsInstaller = $this->getService("$this->name.ps_accounts_installer");
-            $accountsInstaller->install();
-            $accountsFacade = $this->getService("$this->name.ps_accounts_facade");
-            $accountsService = $accountsFacade->getPsAccountsService();
-        }
+        $accountsFacade = $this->accountsFacade();
+        $accountsService = $this->accountsService();
 
         try {
             Media::addJsDef(['contextPsAccounts' => $accountsFacade->getPsAccountsPresenter()->present($this->name)]);
@@ -153,16 +161,23 @@ class Sheepy extends PaymentModule
                     Media::addJsDef(['contextPsEventbus' => $eventbusPresenterService->expose($this, Constants::REQUIRED_CONSENTS)]);
                 }
             }
-
-            $output .= $this->context->smarty->fetch($this->local_path . 'views/templates/admin/configure.tpl');
-            $output .= $this->renderConfigForm();
         } catch (Throwable $t) {
             $this->context->controller->errors[] = $t->getMessage();
 
             return '';
         }
+        $billingFacade = $this->getService('sheepy.ps_billings_facade');
 
-        return $output;
+        Media::addJsDef($billingFacade->present([
+            'logo' => $this->getLocalPath() . 'logo.png',
+            'tosLink' => 'https://www.sheepy.com/legal',
+            'privacyLink' => 'https://www.sheepy.com/legal/privacy-policy',
+            'emailSupport' => 'call@sheepy.com',
+        ]));
+
+        $this->context->smarty->assign('urlBilling', 'https://unpkg.com/@prestashopcorp/billing-cdc/dist/bundle.js');
+
+        return $this->context->smarty->fetch($this->local_path . 'views/templates/admin/configure.tpl') . $this->renderConfigForm();
     }
 
     /**
@@ -221,6 +236,7 @@ class Sheepy extends PaymentModule
      * Install PrestaShop Integration Framework components.
      *
      * @return bool
+     * @throws Exception
      */
     private function installDependencies(): bool
     {
@@ -344,11 +360,13 @@ class Sheepy extends PaymentModule
     {
         $result = true;
 
-        foreach (Constants::CONFIGURATION_KEYS as $key => $value) {
+        foreach (Constants::SHEEPY_CONFIGURATION_KEYS as $key => $value) {
             $result = $result && Configuration::updateValue($key, $value);
         }
 
-        return $result;
+        $accountsService = $this->accountsService();
+
+        return $result && Configuration::updateValue(Constants::SHEEPY_PRESTASHOP_SHOP_ID, $accountsService->getShopUuid());
     }
 
     /**
@@ -361,7 +379,7 @@ class Sheepy extends PaymentModule
         $result = true;
 
         $configurationKeys = array_merge(
-            array_keys(Constants::CONFIGURATION_KEYS),
+            array_keys(Constants::SHEEPY_CONFIGURATION_KEYS),
             array_keys(Constants::SHEEPY_STATUSES)
         );
 
@@ -581,5 +599,54 @@ class Sheepy extends PaymentModule
     public static function logError(string $message, string $objectType = null, int $objectId = null): void
     {
         PrestaShopLogger::addLog($message, 3, null, $objectType, $objectId, true);
+    }
+
+    /**
+     * Set accounts service and facade.
+     *
+     * @return void
+     */
+    private function setAccounts()
+    {
+        try {
+            $accountsFacade = $this->getService("$this->name.ps_accounts_facade");
+            $accountsService = $accountsFacade->getPsAccountsService();
+        } catch (InstallerException $e) {
+            $accountsInstaller = $this->getService("$this->name.ps_accounts_installer");
+            $accountsInstaller->install();
+            $accountsFacade = $this->getService("$this->name.ps_accounts_facade");
+            $accountsService = $accountsFacade->getPsAccountsService();
+        }
+
+        $this->accountsFacade = $accountsFacade;
+        $this->accountsService = $accountsService;
+    }
+
+    /**
+     * Get accounts service.
+     *
+     * @return mixed
+     */
+    private function accountsService()
+    {
+        if (!isset($this->accountsService)) {
+            $this->setAccounts();
+        }
+
+        return $this->accountsService;
+    }
+
+    /**
+     * Get accounts facade.
+     *
+     * @return mixed
+     */
+    private function accountsFacade()
+    {
+        if (!isset($this->accountsFacade)) {
+            $this->setAccounts();
+        }
+
+        return $this->accountsFacade;
     }
 }

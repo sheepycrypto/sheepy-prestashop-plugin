@@ -1,0 +1,57 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create sheepy.zip
+        run: |
+          mkdir -p build/sheepy
+
+          rsync -a ./ build/sheepy/ \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.gitignore' \
+            --exclude='build'
+
+          cd build
+          zip -r ../sheepy.zip sheepy
+
+      - name: Extract release notes from commit extended message
+        id: notes
+        shell: bash
+        run: |
+          BODY="$(git log -1 --format=%B "$GITHUB_SHA" | sed '1d')"
+
+          if [ -z "$BODY" ]; then
+            BODY="Release $GITHUB_REF_NAME"
+          fi
+
+          {
+            echo "body<<EOF"
+            echo "$BODY"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: ${{ steps.notes.outputs.body }}
+          files: sheepy.zip
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

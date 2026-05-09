@@ -30,8 +30,8 @@ class Constants
     public const SHEEPY_API_KEY = 'SHEEPY_API_KEY';
     public const SHEEPY_API_SECRET_KEY = 'SHEEPY_API_SECRET_KEY';
     public const SHEEPY_NOTIFICATION_SECRET_KEY = 'SHEEPY_NOTIFICATION_SECRET_KEY';
-
-    public const CONFIGURATION_KEYS = [
+    public const SHEEPY_PRESTASHOP_SHOP_ID = 'SHEEPY_PRESTASHOP_SHOP_ID';
+    public const SHEEPY_CONFIGURATION_KEYS = [
         self::SHEEPY_API_KEY => null,
         self::SHEEPY_API_SECRET_KEY => null,
         self::SHEEPY_NOTIFICATION_SECRET_KEY => null,
